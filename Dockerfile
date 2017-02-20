@@ -4,7 +4,9 @@ FROM eclipse/ubuntu_jdk8
 MAINTAINER Sun Seng David Tan <sunix@sunix.org>
 
 RUN  sudo apt-get update && \
-     sudo apt-get install -y wget git git-svn tig screen ack-grep tofrodos vim libxtst6 libgtk-3-bin && \
+     sudo apt-get install -y wget git git-svn tig \
+                             screen ack-grep tofrodos vim inetutils-ping \
+                             libxtst6 libgtk-3-bin && \
      sudo apt-get clean && \
      sudo rm -rf /var/lib/apt/lists/*
 
