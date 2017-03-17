@@ -11,7 +11,8 @@ RUN  sudo apt-get update && \
                              apt-transport-https \
                              ca-certificates \
                              curl \
-                             software-properties-common && \    
+                             npm \
+                             software-properties-common && \
      sudo apt-get clean && \
      sudo rm -rf /var/lib/apt/lists/*
 
