@@ -1,5 +1,3 @@
-
-# This is a comment
 FROM eclipse/ubuntu_jdk8
 MAINTAINER Sun Seng David Tan <sunix@sunix.org>
 
@@ -11,10 +9,14 @@ RUN  sudo apt-get update && \
                              apt-transport-https \
                              ca-certificates \
                              curl \
-                             npm \
                              software-properties-common && \
      sudo apt-get clean && \
      sudo rm -rf /var/lib/apt/lists/*
+
+RUN curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash - && \
+    sudo apt-get install -y nodejs && \
+    sudo apt-get clean && \
+    sudo rm -rf /var/lib/apt/lists/*
 
 RUN curl -fsSL https://apt.dockerproject.org/gpg | sudo apt-key add - && \
     sudo add-apt-repository \
