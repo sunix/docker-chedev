@@ -9,6 +9,7 @@ RUN  sudo apt-get update && \
                              apt-transport-https \
                              ca-certificates \
                              curl \
+                             golang \
                              software-properties-common && \
      sudo apt-get clean && \
      sudo rm -rf /var/lib/apt/lists/*
