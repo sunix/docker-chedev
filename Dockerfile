@@ -32,4 +32,7 @@ WORKDIR /home/user/
 RUN wget http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/technology/epp/downloads/release/neon/2/eclipse-jee-neon-2-linux-gtk-x86_64.tar.gz && \
     tar -zxvf eclipse-jee-neon-2-linux-gtk-x86_64.tar.gz && \
     rm eclipse-jee-neon-2-linux-gtk-x86_64.tar.gz
+RUN wget https://storage.googleapis.com/gwt-releases/gwt-2.8.0.zip && \
+    unzip gwt-2.8.0.zip && \
+    rm gwt-2.8.0.zip
 EXPOSE 8081 8082 8083 8084 8085
