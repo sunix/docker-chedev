@@ -3,7 +3,7 @@ MAINTAINER Sun Seng David Tan <sunix@sunix.org>
 
 RUN  sudo apt-get update && \
      sudo apt-get install -y --no-install-recommends \
-                             wget git git-svn tig \
+                             wget git git-svn tig meld \
                              screen ack-grep tofrodos vim inetutils-ping \
                              libxtst6 libgtk-3-bin \
                              apt-transport-https \
