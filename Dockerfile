@@ -10,6 +10,7 @@ RUN  sudo apt-get update && \
                              ca-certificates \
                              curl \
                              golang \
+                             bzip2 \
                              software-properties-common && \
      sudo apt-get clean && \
      sudo rm -rf /var/lib/apt/lists/*
