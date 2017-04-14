@@ -29,6 +29,8 @@ RUN curl -fsSL https://apt.dockerproject.org/gpg | sudo apt-key add - && \
     sudo apt-get clean && \
     sudo rm -rf /var/lib/apt/lists/*
 
+RUN sudo npm install -g gulp
+
 WORKDIR /home/user/
 RUN wget http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/technology/epp/downloads/release/neon/2/eclipse-jee-neon-2-linux-gtk-x86_64.tar.gz && \
     tar -zxvf eclipse-jee-neon-2-linux-gtk-x86_64.tar.gz && \
