@@ -14,7 +14,7 @@ RUN  sudo apt-get update && \
      sudo apt-get clean && \
      sudo rm -rf /var/lib/apt/lists/*
 
-RUN curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - && \
     sudo apt-get install -y nodejs && \
     sudo apt-get clean && \
     sudo rm -rf /var/lib/apt/lists/*
