@@ -39,4 +39,4 @@ RUN wget http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/t
 RUN wget https://storage.googleapis.com/gwt-releases/gwt-2.8.0.zip && \
     unzip gwt-2.8.0.zip && \
     rm gwt-2.8.0.zip
-EXPOSE 8081 8082 8083 8084 8085
+EXPOSE 8081 8082 8083 8084 8085 10000
