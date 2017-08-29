@@ -41,4 +41,9 @@ RUN wget https://storage.googleapis.com/gwt-releases/gwt-2.8.0.zip && \
     rm gwt-2.8.0.zip
 
 RUN echo 'X11UseLocalhost=no' | sudo tee --append /etc/ssh/sshd_config
+
+RUN wget https://mirror.openshift.com/pub/openshift-v3/clients/3.6.173.0.5/linux/oc.tar.gz && \
+    sudo tar zxvf oc.tar.gz -C /usr/local/bin && \
+    rm oc.tar.gz
+
 EXPOSE 8081 8082 8083 8084 8085 10000
