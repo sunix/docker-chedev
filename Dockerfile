@@ -1,34 +1,25 @@
-FROM eclipse/ubuntu_jdk8
+FROM eclipse/centos_jdk8
 MAINTAINER Sun Seng David Tan <sunix@sunix.org>
 
-RUN  sudo apt-get update && \
-     sudo apt-get install -y --no-install-recommends \
-                             wget git git-svn tig meld \
-                             screen ack-grep tofrodos vim inetutils-ping \
-                             libxtst6 libgtk-3-bin \
-                             apt-transport-https \
-                             ca-certificates \
-                             curl \
-                             golang \
-                             bzip2 \
-                             software-properties-common && \
-     sudo apt-get clean && \
-     sudo rm -rf /var/lib/apt/lists/*
+RUN  sudo yum update && \
+     sudo yum install -y  epel-release && \
+     sudo yum install -y  ack tig meld \
+                          screen tofrodos \
+                          golang \
+                          bzip2 \
+                          yum-utils device-mapper-persistent-data lvm2 && \
+     sudo yum clean all
 
-RUN curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash - && \
-    sudo apt-get install -y nodejs && \
-    sudo apt-get clean && \
-    sudo rm -rf /var/lib/apt/lists/*
+RUN sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo && \
+    sudo yum -y makecache fast && \
+    sudo yum -y install docker-ce && \
+    sudo yum clean all
 
-RUN curl -fsSL https://apt.dockerproject.org/gpg | sudo apt-key add - && \
-    sudo add-apt-repository \
-       "deb https://apt.dockerproject.org/repo/ \
-       ubuntu-$(lsb_release -cs) \
-       main" && \
-    sudo apt-get update && \
-    sudo apt-get -y install docker-engine && \
-    sudo apt-get clean && \
-    sudo rm -rf /var/lib/apt/lists/*
+
+RUN curl --silent --location https://rpm.nodesource.com/setup_7.x | sudo bash - && \
+    sudo yum -y install nodejs && \
+    sudo yum clean all
+
 
 RUN sudo npm install -g gulp
 
