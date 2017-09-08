@@ -38,3 +38,4 @@ RUN wget https://mirror.openshift.com/pub/openshift-v3/clients/3.6.173.0.5/linux
     rm oc.tar.gz
 
 EXPOSE 8081 8082 8083 8084 8085 10000
+WORKDIR /projects/
