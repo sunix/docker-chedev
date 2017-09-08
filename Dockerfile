@@ -7,6 +7,7 @@ RUN  sudo yum update && \
                           screen tofrodos \
                           golang \
                           bzip2 \
+                          bash-completion bash-completion-extras \
                           yum-utils device-mapper-persistent-data lvm2 && \
      sudo yum clean all
 
