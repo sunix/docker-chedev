@@ -1,7 +1,7 @@
 FROM eclipse/centos_jdk8
 MAINTAINER Sun Seng David Tan <sunix@sunix.org>
 
-RUN  sudo yum update && \
+RUN  sudo yum update -y && \
      sudo yum install -y  epel-release && \
      sudo yum install -y  ack tig meld \
                           screen tofrodos \
