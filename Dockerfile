@@ -8,6 +8,7 @@ RUN  sudo yum update && \
                           golang \
                           bzip2 \
                           bash-completion bash-completion-extras \
+                          xorg-x11-xauth \
                           yum-utils device-mapper-persistent-data lvm2 && \
      sudo yum clean all
 
