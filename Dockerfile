@@ -26,9 +26,9 @@ RUN curl --silent --location https://rpm.nodesource.com/setup_7.x | sudo bash - 
 RUN sudo npm install -g gulp
 
 WORKDIR /home/user/
-RUN wget http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/technology/epp/downloads/release/neon/2/eclipse-jee-neon-2-linux-gtk-x86_64.tar.gz && \
-    tar -zxvf eclipse-jee-neon-2-linux-gtk-x86_64.tar.gz && \
-    rm eclipse-jee-neon-2-linux-gtk-x86_64.tar.gz
+RUN wget http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/technology/epp/downloads/release/oxygen/1a/eclipse-jee-oxygen-1a-linux-gtk-x86_64.tar.gz && \
+    tar -zxvf eclipse-jee-oxygen-1a-linux-gtk-x86_64.tar.gz && \
+    rm eclipse-jee-oxygen-1a-linux-gtk-x86_64.tar.gz
 RUN wget https://storage.googleapis.com/gwt-releases/gwt-2.8.0.zip && \
     unzip gwt-2.8.0.zip && \
     rm gwt-2.8.0.zip
