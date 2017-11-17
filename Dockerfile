@@ -9,6 +9,7 @@ RUN  sudo yum update -y && \
                           bzip2 \
                           bash-completion bash-completion-extras \
                           xorg-x11-xauth \
+                          postgresql \
                           yum-utils device-mapper-persistent-data lvm2 && \
      sudo yum clean all
 
