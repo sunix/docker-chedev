@@ -11,6 +11,7 @@ RUN  sudo yum update -y && \
                           xorg-x11-xauth \
                           postgresql \
                           vim \
+                          make \
                           yum-utils device-mapper-persistent-data lvm2 && \
      sudo yum clean all
 
@@ -24,10 +25,28 @@ RUN curl --silent --location https://rpm.nodesource.com/setup_7.x | sudo bash - 
     sudo yum -y install nodejs && \
     sudo yum clean all
 
+WORKDIR /home/user/
+
+ENV RUBY_INSTALLER_VERSION=0.4.3
+ENV RUBY_VERSION=2.1.2
+
+RUN wget -O ruby-install-$RUBY_INSTALLER_VERSION.tar.gz \
+      https://github.com/postmodern/ruby-install/archive/v$RUBY_INSTALLER_VERSION.tar.gz && \
+    tar -xzf ruby-install-$RUBY_INSTALLER_VERSION.tar.gz && \
+    cd ruby-install-$RUBY_INSTALLER_VERSION && \
+    sudo make install && \
+    sudo ./bin/ruby-install -i /usr/local ruby $RUBY_VERSION && \
+    sudo make uninstall && \
+    cd ../ && \
+    sudo rm -rf /usr/local/src/ruby* && \
+    rm ruby-install-$RUBY_INSTALLER_VERSION.tar.gz && \
+    rm -rf ruby-install-$RUBY_INSTALLER_VERSION && \
+    sudo /usr/local/bin/gem install bundler jekyll --no-ri --no-rdoc && \
+    sudo yum clean all
+
 
 RUN sudo npm install -g gulp
 
-WORKDIR /home/user/
 RUN wget http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/technology/epp/downloads/release/oxygen/1a/eclipse-jee-oxygen-1a-linux-gtk-x86_64.tar.gz && \
     tar -zxvf eclipse-jee-oxygen-1a-linux-gtk-x86_64.tar.gz && \
     rm eclipse-jee-oxygen-1a-linux-gtk-x86_64.tar.gz
