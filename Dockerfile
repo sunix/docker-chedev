@@ -53,9 +53,6 @@ RUN wget -O ruby-install-$RUBY_INSTALLER_VERSION.tar.gz \
 RUN wget http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/technology/epp/downloads/release/oxygen/1a/eclipse-jee-oxygen-1a-linux-gtk-x86_64.tar.gz && \
     tar -zxvf eclipse-jee-oxygen-1a-linux-gtk-x86_64.tar.gz && \
     rm eclipse-jee-oxygen-1a-linux-gtk-x86_64.tar.gz
-RUN wget https://storage.googleapis.com/gwt-releases/gwt-2.8.0.zip && \
-    unzip gwt-2.8.0.zip && \
-    rm gwt-2.8.0.zip
 
 RUN echo 'X11UseLocalhost=no' | sudo tee --append /etc/ssh/sshd_config
 
