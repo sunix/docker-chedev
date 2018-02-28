@@ -22,9 +22,11 @@ RUN sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/
     sudo yum clean all
 
 
-RUN curl --silent --location https://rpm.nodesource.com/setup_7.x | sudo bash - && \
+RUN curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash - && \
     sudo yum -y install nodejs && \
     sudo yum clean all
+
+RUN sudo npm install -g gulp yarn
 
 WORKDIR /home/user/
 
@@ -45,8 +47,6 @@ RUN wget -O ruby-install-$RUBY_INSTALLER_VERSION.tar.gz \
     sudo /usr/local/bin/gem install bundler jekyll --no-ri --no-rdoc && \
     sudo yum clean all
 
-
-RUN sudo npm install -g gulp
 
 RUN wget http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/technology/epp/downloads/release/oxygen/1a/eclipse-jee-oxygen-1a-linux-gtk-x86_64.tar.gz && \
     tar -zxvf eclipse-jee-oxygen-1a-linux-gtk-x86_64.tar.gz && \
