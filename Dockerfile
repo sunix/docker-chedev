@@ -32,8 +32,8 @@ RUN sudo npm install -g gulp yarn \
 
 WORKDIR /home/user/
 
-ENV RUBY_INSTALLER_VERSION=0.4.3
-ENV RUBY_VERSION=2.1.2
+ENV RUBY_INSTALLER_VERSION=0.6.1
+ENV RUBY_VERSION=2.5.0
 
 RUN wget -O ruby-install-$RUBY_INSTALLER_VERSION.tar.gz \
       https://github.com/postmodern/ruby-install/archive/v$RUBY_INSTALLER_VERSION.tar.gz && \
