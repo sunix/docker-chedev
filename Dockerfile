@@ -49,11 +49,6 @@ RUN wget -O ruby-install-$RUBY_INSTALLER_VERSION.tar.gz \
     sudo /usr/local/bin/gem install bundler jekyll --no-ri --no-rdoc && \
     sudo yum clean all
 
-
-RUN wget http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/technology/epp/downloads/release/oxygen/1a/eclipse-jee-oxygen-1a-linux-gtk-x86_64.tar.gz && \
-    tar -zxvf eclipse-jee-oxygen-1a-linux-gtk-x86_64.tar.gz && \
-    rm eclipse-jee-oxygen-1a-linux-gtk-x86_64.tar.gz
-
 RUN echo 'X11UseLocalhost=no' | sudo tee --append /etc/ssh/sshd_config
 
 RUN wget https://mirror.openshift.com/pub/openshift-v3/clients/3.6.173.0.5/linux/oc.tar.gz && \
