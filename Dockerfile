@@ -60,7 +60,8 @@ RUN wget https://mirror.openshift.com/pub/openshift-v3/clients/3.6.173.0.5/linux
     sudo tar zxvf oc.tar.gz -C /usr/local/bin && \
     rm oc.tar.gz
 
-RUN sudo -u postgres /usr/bin/initdb /var/lib/pgsql/data/
+# RUN sudo postgresql-setup initdb
+# RUN sudo -u postgres /usr/bin/initdb /var/lib/pgsql/data/
 
 
 EXPOSE 8081 8082 8083 8084 8085 10000 4000
