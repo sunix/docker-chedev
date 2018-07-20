@@ -1,4 +1,4 @@
-FROM eclipse/che-theia
+FROM eclipse/che-theia:nightly
 MAINTAINER Sun Seng David Tan <sunix@sunix.org>
 
 RUN apk update && \
